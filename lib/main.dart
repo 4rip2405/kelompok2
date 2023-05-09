@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tugas1/beranda.dart';
+import 'package:tugas1/beranda_navigasi.dart';
 
 void main() {
   runApp(MyApp());
