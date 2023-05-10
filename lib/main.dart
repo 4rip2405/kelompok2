@@ -1,20 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:tugas1/widget/navigasi.dart';
+import 'package:tugas1/widget/button.dart';
 
-void main() {
-  runApp(const MyApp());
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  static final String title = 'tugas';
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
+  Widget build(BuildContext context) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: title,
+        theme: ThemeData(primarySwatch: Colors.blue),
+        home: MainPage(),
+      );
+}
+
+class MainPage extends StatefulWidget {
+  @override
+  _MainPageState createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        drawer: NavigationDrawerWidget(),
+        appBar: AppBar(
+          title: Text(MyApp.title),
+        ),
+        body: Builder(
+          builder: (context) => Container(
+            alignment: Alignment.center,
+            padding: EdgeInsets.symmetric(horizontal: 32),
+          ),
+        ),
+      );
 }
