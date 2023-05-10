@@ -5,7 +5,8 @@ class Product {
   final String imgUrl;
   final double price;
 
-  const Product({required this.name, required this.imgUrl, required this.price});
+  const Product(
+      {required this.name, required this.imgUrl, required this.price});
 }
 
 class ProductList extends StatelessWidget {
@@ -36,6 +37,7 @@ class ProductList extends StatelessWidget {
             "https://genkisushi.co.id/media/2020/06/deluxe-chicken-teriyaki-bento.jpg",
         price: 65000),
   ];
+
 
   @override
   Widget build(BuildContext context) {
