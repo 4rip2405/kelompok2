@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tugas1/profilpage/favorit.dart';
+import 'package:tugas1/profilpage/keranjang.dart';
 import 'package:tugas1/profilpage/people.dart';
 import 'package:tugas1/profilpage/userpage.dart';
 
@@ -14,7 +15,7 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     return Drawer(
       child: Material(
-        color: Color.fromRGBO(50, 75, 205, 1),
+        color: Colors.blueGrey,
         child: ListView(
           children: <Widget>[
             buildHeader(
@@ -48,8 +49,8 @@ class NavigationDrawerWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   buildMenuItem(
-                    text: 'Workflow',
-                    icon: Icons.workspaces_outline,
+                    text: 'Keranjang',
+                    icon: Icons.shop_2,
                     onClicked: () => selectedItem(context, 2),
                   ),
                   const SizedBox(height: 16),
@@ -112,7 +113,7 @@ class NavigationDrawerWidget extends StatelessWidget {
               Spacer(),
               CircleAvatar(
                 radius: 24,
-                backgroundColor: Color.fromRGBO(30, 60, 168, 1),
+                backgroundColor: Colors.blueGrey,
                 child: Icon(Icons.add_comment_outlined, color: Colors.white),
               )
             ],
@@ -175,7 +176,7 @@ class NavigationDrawerWidget extends StatelessWidget {
         ));
         break;
       case 2: Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => FavouritesPage(),
+          builder: (context) => ProductList(),
         ));
     }
   }

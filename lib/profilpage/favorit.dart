@@ -6,7 +6,7 @@ class FavouritesPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Favourites'),
           centerTitle: true,
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.blueGrey,
         ),
         body: Column(
       children: <Widget>[
