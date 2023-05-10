@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:tugas1/widget/navigasi.dart';
+import 'package:tugas1/appbar.dart';
 class Product {
   final String name;
   final String imgUrl;
@@ -41,9 +42,7 @@ class ProductList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Beranda"),
-      ),
+      appBar: CustomAppBar(),
       body: ListView.builder(
         itemCount: products.length,
         itemBuilder: (BuildContext context, int index) {
@@ -93,6 +92,7 @@ class ProductList extends StatelessWidget {
           );
         },
       ),
+      drawer: NavigationDrawerWidget(),
     );
   }
 }
